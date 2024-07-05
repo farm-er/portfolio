@@ -10,6 +10,7 @@
     margin: 0;
     outline: none;
     text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
@@ -38,6 +39,60 @@ body {
     white-space: nowrap;
     color: var(--text-white);
     font-size: 20px;
+}
+
+#check {
+    display: none;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background-color: transparent;
+    margin-top: 20px;
+    font-size: 15px;
+    z-index: 100;
+}
+
+.menu ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    color: var(--text-white);
+    background-color: var(--bg-dark);
+    padding-left: 20px;
+    border-bottom: 1px solid var(--bg-light);
+    box-shadow: 0 2px 5px rgba(100, 100, 100, 0.311);
+    transition: all 0.3s ease;
+}
+
+.menu ul li:hover {
+    padding-left: 20px;
+}
+
+.menu-toggle {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-toggle i {
+    color: var(--text-white);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-toggle i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(213, 213, 219, 0.15);
 }
 
 /* Introduction */
@@ -105,7 +160,7 @@ body {
     flex: 0 0 33.33%;
     max-width: 33.33%;
     height: 100%;
-    padding: 50px;
+    padding: 40px;
 }
 
 .projects .sub-section .container .project-item {
@@ -160,6 +215,12 @@ body {
 
 .projects .sub-section .container .project-item .inspect a {
     color: var(--text-white);
+}
+.projects .sub-section .container .project-item .inspect a i {
+    transition: all 0.3s ease;
+}
+.projects .sub-section .container .project-item .inspect a i:hover {
+    transform: scale(1.1);
 }
 
 /* contacts */
@@ -270,6 +331,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 50px;
+    background-color: var(--text-white);
 }
 
 .other-contacts .contact-item {
@@ -283,4 +345,19 @@ body {
 .other-contacts .contact-item a {
     font-size: 30px;
     color: var(--bg-dark);
+}
+
+@media (max-width: 678px) {
+    .header {
+        display: none;
+    }
+    .introduction .introduction-img {
+        display: none;
+    }
+    .header i {
+        display: inline-block;
+    }
+    .header {
+        justify-content: end;
+    }
 }
