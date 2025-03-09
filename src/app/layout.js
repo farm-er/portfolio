@@ -1,5 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import RipplesEvent from "./ripplesEvent";
+import CustomNavBar from "../../ui/customNavBar/customNavBar";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,8 +23,36 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body 
+        className={`${geistSans.variable} ${geistMono.variable}`}
+      >
+        <CustomNavBar/>
+        <RipplesEvent>
+          {
+            // nav bar 
+          }
+          <main>
+            {children}
+          </main>
+          <footer>
+            <div className="contacts">
+              <div className="email">
+                <h3>Email</h3>
+                <input type="email" placeholder="Enter your email to get the latest posts"></input>
+              </div>
+              <div className="other">
+                <h3>Connect with me</h3>
+                <div className="socialLinks">
+                  <img src="/icons/linkedin.svg" />
+                  <img src="/icons/fiverr.svg" />
+                </div>
+              </div>
+            </div>
+            <div className="navigation">
+
+            </div>
+          </footer>
+        </RipplesEvent>
       </body>
     </html>
   );

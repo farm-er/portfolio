@@ -1,0 +1,94 @@
+
+
+:root
+{
+    --cp-bg-clr: rgba( 255, 255, 255, 0.05);
+    --cp-br-clr: rgba( 255, 255, 255, 0.12);
+    --cp-bs-clr: rgba(255, 255, 255, 0.1);
+    --normal-border-clr: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --cp-bg-clr: rgba( 0, 0, 0, 0.12);
+        --cp-br-clr: rgba( 0, 0, 0, 0.12);
+        --cp-bs-clr: rgba(0, 0, 0, 0.1);
+        --normal-border-clr: #000;
+    }
+}
+
+.intro
+{
+    height: fit-content;
+    background: var( --cp-bg-clr);
+    border: 1px solid var( --cp-br-clr);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px var(--cp-bs-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding: 10% 5%;
+}
+
+.intro .info
+{
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.intro .info p
+{
+    font-size: clamp(0.5rem, 2.4vw, 1.5rem);
+    text-align: start;
+}
+
+.intro img
+{
+    aspect-ratio: 1;
+    width: 30%;
+    /* border: 1px solid red; */
+}
+
+
+.currentPosition
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.currentPosition #miniMap {
+    width: 100%;  /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--cp-bs-clr);
+    margin-top: 10px;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.currentPosition .positionInfo
+{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 2%;
+    font-size: clamp(0.7rem, 2.4vw, 1.5rem);
+    border: 1px solid var(--normal-border-clr);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.projects
+{
+    width: 100%;
+    height: 400px;
+    /* border: 1px solid red; */
+    background: var( --cp-bg-clr);
+    border: 1px solid var( --cp-br-clr);
+    box-shadow: 0 4px 10px var(--cp-bs-clr);
+    margin-bottom: 20px;
+}

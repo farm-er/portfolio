@@ -1,0 +1,135 @@
+
+
+:root 
+{
+    --nav-bg-clr: rgba(255, 255, 255, 0.05);
+    --nav-br-clr: rgba(255, 255, 255, 0.12);
+    --nav-bs-clr: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --nav-bg-clr: rgba(0, 0, 0, 0.05);
+    --nav-br-clr: rgba(0, 0, 0, 0.12);
+    --nav-bs-clr: rgba(255, 255, 255, 0.1);
+  }
+}
+
+nav
+{
+    width: 60%;
+    right: 20%;
+    height: 3rem;
+    position: fixed;
+    top: 10px;
+    background: var(--nav-bg-clr);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--nav-br-clr);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px var(--nav-bs-clr);
+    font-size: clamp(0.8rem, 1vw + 0.5vh, 1.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+nav ul
+{
+    user-select: none;
+    height: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav ul li
+{
+    white-space: nowrap;
+    height: 60%;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+}
+
+
+nav ul li:hover,
+nav ul li.selected
+{
+    border-bottom: 1px solid green;
+    color: green;
+}
+
+nav svg
+{
+    display: none;
+}
+
+
+@media (max-width: 890px) {
+    nav
+    {
+        width: 60%;
+        right: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    nav
+    {
+        width: 80%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 400px) {
+    nav
+    {
+        width: 10%;
+        height: auto;
+        aspect-ratio: 1;
+        right: 10px;
+        padding: 1%;
+    }
+    nav svg
+    {
+        display: block;
+        aspect-ratio: 1;
+        fill: var(--font-clr);
+    }
+    nav ul
+    {
+        display: block;
+        height: fit-content;
+        position: fixed;
+        top: 50px;
+        right: -160px;
+        width: fit-content;
+        padding: 10px 5px;
+        transition: all 0.3s ease;
+        background: var(--nav-bg-clr);
+        backdrop-filter: blur(100px);
+        border: 1px solid var(--nav-br-clr);
+        border-radius: 5px;
+        box-shadow: 0 4px 30px var(--nav-bs-clr);
+    }
+
+    nav ul.open
+    {
+        right: 0;
+    }
+
+    nav ul li
+    {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
